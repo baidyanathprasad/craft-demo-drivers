@@ -1,0 +1,35 @@
+# app basic config
+server:
+  type: default
+  maxThreads: 32
+  minThreads: 8
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+template: Hello, %s!
+defaultName: Baidyanath
+version: ${ENV_VARIABLE_VERSION:- 0.0.2}
+
+# database config
+database:
+  driverClass: org.mariadb.jdbc.Driver
+  url: jdbc:mariadb://localhost:3306/craft_demo
+  user: craft-demo
+  password: password
+  initialSize: 2
+  minSize: 1
+  maxSize: 8
+
+# swagger config
+swagger:
+  resourcePackage: com.baidyanath.users
+  title: Dropwizard-Docker
+  version: 1.0.1
+  description: A sample project for creating restful APIs using Dropwizard
+  contact: Baidyanath Prasad
+  contactEmail: baidyanathprasadmdb@gmail.com
+  contactUrl: https://www.baidyanathprasad.com
+
